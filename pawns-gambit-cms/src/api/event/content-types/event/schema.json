@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": "Chess events, tournaments, workshops"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "eventType": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "tournament",
+        "workshop",
+        "meetup",
+        "online"
+      ]
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "location": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "registrationLink": {
+      "type": "string"
+    },
+    "maxParticipants": {
+      "type": "integer"
+    },
+    "currentParticipants": {
+      "type": "integer",
+      "default": 0
+    },
+    "prizePool": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "skillLevel": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "all levels"
+      ]
+    },
+    "entryFee": {
+      "type": "integer"
+    }
+  }
+}

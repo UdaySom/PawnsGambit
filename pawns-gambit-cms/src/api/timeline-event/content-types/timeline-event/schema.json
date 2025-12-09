@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "timeline_events",
+  "info": {
+    "singularName": "timeline-event",
+    "pluralName": "timeline-events",
+    "displayName": "Timeline Event",
+    "description": "Historical timeline events for About page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
+

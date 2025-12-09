@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "achievements",
+  "info": {
+    "singularName": "achievement",
+    "pluralName": "achievements",
+    "displayName": "Achievement",
+    "description": "Badges and achievements"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["tournament", "milestone", "special"],
+      "required": true
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community-member.community-member",
+      "mappedBy": "achievements"
+    }
+  }
+}
+

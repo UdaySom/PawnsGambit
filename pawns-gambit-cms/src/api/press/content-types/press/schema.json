@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "press_articles",
+  "info": {
+    "singularName": "press",
+    "pluralName": "press-articles",
+    "displayName": "Press Article",
+    "description": "Press coverage and media mentions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "publication": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "publishDate": {
+      "type": "date",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text"
+    }
+  }
+}
+

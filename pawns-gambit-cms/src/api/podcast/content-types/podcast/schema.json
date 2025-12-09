@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "podcasts",
+  "info": {
+    "singularName": "podcast",
+    "pluralName": "podcasts",
+    "displayName": "Podcast Episode",
+    "description": "Podcast episodes for Pawn's Gambit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "guest": {
+      "type": "string"
+    },
+    "artwork": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "artworkAlt": {
+      "type": "string"
+    },
+    "audioFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["audio"]
+    },
+    "duration": {
+      "type": "integer",
+      "required": true
+    },
+    "publishDate": {
+      "type": "date",
+      "required": true
+    },
+    "listens": {
+      "type": "integer",
+      "default": 0
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "podcasts"
+    }
+  }
+}
+

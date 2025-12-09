@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors - Dark Theme */
+    --color-background: #0f1720; /* dark navy */
+    --color-foreground: #F3F4F6; /* light gray for text */
+    --color-border: #2d3748; /* darker border for dark theme */
+    --color-input: #1a2332; /* darker input background */
+    --color-ring: #D4A574; /* amber-600 - keeping accent */
+    
+    /* Card Colors */
+    --color-card: #1a2332; /* slightly lighter than background */
+    --color-card-foreground: #F3F4F6; /* light text */
+    --color-popover: #1a2332; /* dark popover */
+    --color-popover-foreground: #F3F4F6; /* light text */
+    
+    /* Muted Colors */
+    --color-muted: #1b2533; /* dark muted */
+    --color-muted-foreground: #9CA3AF; /* lighter gray for muted text */
+    
+    /* Primary Colors */
+    --color-primary: #F3F4F6; /* light for text/buttons on dark bg */
+    --color-primary-foreground: #0f1720; /* dark text on light buttons */
+    
+    /* Secondary Colors */
+    --color-secondary: #2d3748; /* dark secondary */
+    --color-secondary-foreground: #F3F4F6; /* light text */
+    
+    /* Accent Colors */
+    --color-accent: #D4A574; /* amber-600 - keeping the warm accent */
+    --color-accent-foreground: #0f1720; /* dark text on accent */
+    
+    /* State Colors */
+    --color-destructive: #EF4444; /* brighter red for dark theme */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-success: #10B981; /* brighter green for dark theme */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F59E0B; /* brighter yellow for dark theme */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #EF4444; /* brighter red for dark theme */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Additional Brand Colors */
+    --color-surface: #1b2533; /* dark surface */
+    --color-text-primary: #F3F4F6; /* light text */
+    --color-text-secondary: #9CA3AF; /* lighter gray */
+    
+    /* Chess-themed Colors */
+    --color-chess-dark: #2d3748; /* lighter dark for chess squares */
+    --color-chess-light: #4a5568; /* darker light for chess squares on dark bg */
+    --color-wood-accent: #D4A574; /* amber-600 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  p, body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Chess Board Grid Pattern - Updated for dark theme */
+  .chess-grid {
+    background-image: 
+      linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.02) 25%),
+      linear-gradient(-45deg, transparent 25%, rgba(255, 255, 255, 0.02) 25%),
+      linear-gradient(45deg, rgba(255, 255, 255, 0.02) 75%, transparent 75%),
+      linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 75%, transparent 75%);
+    background-size: 32px 32px;
+    background-position: 0 0, 0 16px, 16px -16px, -16px 0px;
+  }
+
+  /* Strategic Shadows - Updated for dark theme with subtle glow */
+  .shadow-strategic {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-strategic-lg {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Animated Gradient Background */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .bg-animated-gradient {
+    background: linear-gradient(-45deg, #1F2937, #0f1720, #1b2533, #0f1720);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Overlay Gradient */
+  .overlay-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 32, 0.6) 0%,
+      transparent 50%,
+      rgba(31, 41, 55, 0.4) 100%
+    );
+  }
+
+  /* Smooth Transitions */
+  .transition-strategic {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-quick {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Hover Effects */
+  .hover-elevate:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Focus Styles */
+  .focus-ring:focus {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Custom Scrollbar - Dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E5B885;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+.btn-primary  {
+    @apply bg-primary text-primary-foreground transition-strategic;
+  }
+.btn-secondary  {
+    @apply bg-secondary text-secondary-foreground transition-strategic;
+  }
+.btn-accent  {
+    @apply bg-accent text-accent-foreground transition-strategic;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-card text-card-foreground rounded-lg border shadow-strategic;
+  }
+.card-hover  {
+    @apply card transition-strategic cursor-pointer;
+  }
+
+  /* Navigation Styles */
+.nav-link  {
+    @apply text-foreground hover:text-accent transition-quick rounded-md px-3 py-2;
+  }
+.nav-link-active  {
+    @apply nav-link text-accent;
+  }
+
+  /* Form Styles */
+.form-input  {
+    @apply bg-input border border-border rounded-md px-3 py-2 transition-quick;
+  }
+
+  .form-label {
+    @apply text-sm font-medium text-foreground mb-2 block;
+  }
+
+  /* Chess Piece Animation */
+  @keyframes knight-move {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(16px, -8px); }
+    50% { transform: translate(32px, -16px); }
+    75% { transform: translate(48px, -8px); }
+    100% { transform: translate(64px, 0); }
+  }
+
+  .knight-animation {
+    animation: knight-move 0.8s ease-in-out;
+  }
+
+  /* Tournament Bracket Styles */
+  .bracket-line {
+    @apply border-border border-2 rounded;
+  }
+.bracket-match  {
+    @apply bg-card border border-border rounded-lg p-4 shadow-strategic transition-strategic;
+  }
+
+  /* Podcast Player Styles */
+  .audio-waveform {
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    height: 4px;
+    border-radius: 2px;
+  }
+
+  /* Achievement Badge Styles */
+  .achievement-badge {
+    @apply bg-success text-success-foreground rounded-full px-3 py-1 text-sm font-medium shadow-strategic;
+  }
+
+  /* Progress Indicators */
+  .progress-bar {
+    @apply bg-muted rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply bg-accent h-full transition-all duration-500 ease-out;
+  }
+}
+
+@layer utilities {
+  /* Spacing Utilities */
+  .space-strategic > * + * {
+    margin-top: 1.618rem; /* Golden ratio spacing */
+  }
+
+  /* Text Utilities */
+  .text-strategic {
+    color: var(--color-primary);
+  }
+
+  .text-warm {
+    color: var(--color-accent);
+  }
+
+  /* Background Utilities */
+  .bg-chess-pattern {
+    @apply chess-grid;
+  }
+
+  /* Border Utilities */
+  .border-strategic {
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  /* Responsive Grid */
+  .grid-chess {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .grid-chess {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid-chess {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* Hover Utilities */
+  .hover-accent:hover {
+    color: var(--color-accent);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Focus Utilities */
+  .focus-accent:focus {
+    outline-color: var(--color-accent);
+  }
+}
