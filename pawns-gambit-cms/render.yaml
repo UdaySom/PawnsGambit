@@ -3,7 +3,7 @@ services:
     name: pawns-gambit-cms
     env: node
     plan: free
-    buildCommand: cd pawns-gambit-cms && npm install && npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     rootDir: pawns-gambit-cms
     envVars:
