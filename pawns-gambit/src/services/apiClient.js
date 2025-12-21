@@ -4,6 +4,7 @@ const apiClient = axios.create({
   baseURL: import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337/api',
   headers: {
     'Content-Type': 'application/json',
+    'Authorization': 'Bearer b47935d876ca326f7fab929e068c2a10424a33f76f7e49e098d5bb7e83d93d3406499783665267d1e5b4830af6632c3403484f532c598618aca826054a8ef666bba9c4e07d0c1cc872673e15159f09d35c7f78bda3368f58c6457f773c565c05e9392d43e6f44a23ce81a72b65a9438d451675cd6a49339ddd714795419dbb81',
   },
 });
 
