@@ -1,0 +1,10 @@
+{
+  "name": "pawns-gambit-root",
+  "private": true,
+  "scripts": {
+    "build": "cd pawns-gambit && npm run build && cd ../pawns-gambit-cms && npm run build",
+    "dev": "cd pawns-gambit-cms && npm run dev",
+    "start": "cd pawns-gambit && npm start"
+  },
+  "devDependencies": {}
+}

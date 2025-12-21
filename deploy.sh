@@ -32,7 +32,7 @@ case $choice in
         cd pawns-gambit
         vercel --prod
         ;;
-    2)
+    2)``
         echo -e "${GREEN}Deploying Backend...${NC}"
         cd pawns-gambit-cms
         vercel --prod
