@@ -24,9 +24,13 @@ export default ({ env }) => [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: env('CORS_ORIGIN')
-        ? env('CORS_ORIGIN').split(',')
-        : ['http://localhost:4028', 'http://localhost:3000', 'http://127.0.0.1:5173'],
+      origin: [
+        'https://pawns-gambit.vercel.app',
+        'https://pawnsgambit.onrender.com',
+        'http://localhost:4028',
+        'http://localhost:3000',
+        'http://127.0.0.1:5173',
+      ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
