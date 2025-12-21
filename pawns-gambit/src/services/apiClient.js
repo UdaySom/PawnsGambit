@@ -44,7 +44,7 @@ export default apiClient;
 export const getMediaUrl = (url) => {
   if (!url) return null;
   if (url.startsWith('http')) return url;
-  return `${import.meta.env.VITE_STRAPI_MEDIA_URL || 'http://localhost:1337'}${url}`;
+  return `http://0.0.0.0:1337${url}`;
 };
 
 // Helper function to extract data from Strapi response (supports v4 and v5)
