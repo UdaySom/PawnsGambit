@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pawns-gambit-cms
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Add your environment variables here, e.g.:
+      # - key: DATABASE_URL
+      #   value: <your-database-url>
+    # rootDir: pawns-gambit-cms
+
